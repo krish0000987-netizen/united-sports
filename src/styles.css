@@ -1,0 +1,273 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * UnitedAthletes for India Foundation — design system.
+ * Deep navy stadium night + trophy gold. All colors in oklch.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-navy-deep: var(--navy-deep);
+  --color-navy: var(--navy);
+  --color-navy-light: var(--navy-light);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --font-display: "Anton", "Arial Narrow", sans-serif;
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --radius: 0.25rem;
+
+  --navy-deep: oklch(0.16 0.055 262);
+  --navy: oklch(0.22 0.062 262);
+  --navy-light: oklch(0.29 0.058 262);
+  --gold: oklch(0.79 0.145 84);
+  --gold-soft: oklch(0.88 0.09 88);
+
+  --background: oklch(0.16 0.055 262);
+  --foreground: oklch(0.97 0.008 250);
+  --card: oklch(0.21 0.058 262);
+  --card-foreground: oklch(0.97 0.008 250);
+  --popover: oklch(0.21 0.058 262);
+  --popover-foreground: oklch(0.97 0.008 250);
+  --primary: oklch(0.79 0.145 84);
+  --primary-foreground: oklch(0.16 0.055 262);
+  --secondary: oklch(0.27 0.058 262);
+  --secondary-foreground: oklch(0.97 0.008 250);
+  --muted: oklch(0.25 0.05 262);
+  --muted-foreground: oklch(0.74 0.024 255);
+  --accent: oklch(0.3 0.06 262);
+  --accent-foreground: oklch(0.97 0.008 250);
+  --destructive: oklch(0.6 0.21 25);
+  --destructive-foreground: oklch(0.98 0.005 250);
+  --border: oklch(0.35 0.045 262 / 55%);
+  --input: oklch(0.35 0.045 262 / 70%);
+  --ring: oklch(0.79 0.145 84);
+
+  --chart-1: oklch(0.79 0.145 84);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+
+  --sidebar: oklch(0.21 0.058 262);
+  --sidebar-foreground: oklch(0.97 0.008 250);
+  --sidebar-primary: oklch(0.79 0.145 84);
+  --sidebar-primary-foreground: oklch(0.16 0.055 262);
+  --sidebar-accent: oklch(0.27 0.058 262);
+  --sidebar-accent-foreground: oklch(0.97 0.008 250);
+  --sidebar-border: oklch(0.35 0.045 262 / 55%);
+  --sidebar-ring: oklch(0.79 0.145 84);
+
+  --gradient-gold: linear-gradient(
+    100deg,
+    oklch(0.72 0.13 66),
+    oklch(0.9 0.11 92),
+    oklch(0.75 0.14 78)
+  );
+  --gradient-night: linear-gradient(
+    180deg,
+    oklch(0.16 0.055 262),
+    oklch(0.12 0.045 262)
+  );
+  --shadow-lift: 0 24px 60px -24px oklch(0.05 0.04 262 / 80%);
+  --shadow-gold: 0 18px 50px -18px oklch(0.79 0.145 84 / 45%);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    line-height: 0.95;
+  }
+
+  ::selection {
+    background: var(--gold);
+    color: var(--navy-deep);
+  }
+}
+
+@utility text-gold-gradient {
+  background-image: var(--gradient-gold);
+  background-clip: text;
+  color: transparent;
+}
+
+@utility surface-card {
+  background: linear-gradient(
+    160deg,
+    oklch(0.24 0.058 262 / 90%),
+    oklch(0.18 0.05 262 / 90%)
+  );
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-lift);
+  backdrop-filter: blur(6px);
+}
+
+@utility eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+@utility rule-gold {
+  background-image: var(--gradient-gold);
+  height: 2px;
+  width: 4rem;
+}
+
+@utility grain {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.35;
+    background-image: radial-gradient(
+      oklch(1 0 0 / 4%) 1px,
+      transparent 1px
+    );
+    background-size: 3px 3px;
+  }
+}
+
+@utility reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.9s var(--ease-out-expo),
+    transform 0.9s var(--ease-out-expo);
+}
+
+@utility reveal-in {
+  opacity: 1;
+  transform: none;
+}
+
+@keyframes ua-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@utility marquee-track {
+  animation: ua-marquee 38s linear infinite;
+}
+
+@keyframes ua-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@utility float-slow {
+  animation: ua-float 6s ease-in-out infinite;
+}
+
+@keyframes ua-pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 oklch(0.79 0.145 84 / 35%);
+  }
+  70% {
+    box-shadow: 0 0 0 22px oklch(0.79 0.145 84 / 0%);
+  }
+  100% {
+    box-shadow: 0 0 0 0 oklch(0.79 0.145 84 / 0%);
+  }
+}
+
+@utility pulse-ring {
+  animation: ua-pulse-ring 2.8s ease-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .marquee-track,
+  .float-slow,
+  .pulse-ring {
+    animation: none;
+  }
+}
