@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Menu, X, Phone } from "lucide-react";
 import { useEffect, useState } from "react";
 
-import logo from "@/assets/ua-logo.jpeg.asset.json";
+import logoCircle from "@/assets/logo-circle.png";
 import { cn } from "@/lib/utils";
 
 const nav = [
@@ -35,15 +35,13 @@ export function SiteHeader() {
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5">
         <Link to="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
-          <div className="relative flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-full ring-1 ring-primary/40">
-            <img
-              src={logo.url}
-              alt="UnitedAthletes for India Foundation emblem"
-              width={44}
-              height={44}
-              className="h-full w-full scale-[1.28] object-cover object-[center_3%]"
-            />
-          </div>
+          <img
+            src={logoCircle}
+            alt="UnitedAthletes for India Foundation emblem"
+            width={44}
+            height={44}
+            className="h-11 w-11 rounded-full object-contain ring-1 ring-primary/40"
+          />
           <span className="leading-none">
             <span className="block font-display text-lg tracking-wide">
               United<span className="text-primary">Athletes</span>

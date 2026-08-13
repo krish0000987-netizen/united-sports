@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { MapPin, Phone } from "lucide-react";
 
-import logo from "@/assets/ua-logo.jpeg.asset.json";
+import logoCircle from "@/assets/logo-circle.png";
 
 export function SiteFooter() {
   return (
@@ -9,16 +9,14 @@ export function SiteFooter() {
       <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 md:grid-cols-[1.4fr_1fr_1.2fr]">
         <div>
           <div className="flex items-center gap-3">
-            <div className="relative flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-full ring-1 ring-primary/40">
-              <img
-                src={logo.url}
-                alt="UnitedAthletes for India Foundation emblem"
-                width={56}
-                height={56}
-                loading="lazy"
-                className="h-full w-full scale-[1.28] object-cover object-[center_3%]"
-              />
-            </div>
+            <img
+              src={logoCircle}
+              alt="UnitedAthletes for India Foundation emblem"
+              width={56}
+              height={56}
+              loading="lazy"
+              className="h-14 w-14 rounded-full object-contain ring-1 ring-primary/40"
+            />
             <span className="font-display text-2xl">
               United<span className="text-primary">Athletes</span>
             </span>
