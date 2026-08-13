@@ -65,11 +65,21 @@ function Contact() {
                 <Phone className="mt-1 h-5 w-5 shrink-0 text-primary" />
                 <div>
                   <p className="text-xs uppercase tracking-[0.24em] text-muted-foreground">
-                    Phone
+                    Phone & WhatsApp
                   </p>
-                  <a href="tel:+918527877688" className="text-lg hover:text-primary">
-                    +91 85278 77688
-                  </a>
+                  <div className="flex flex-wrap items-center gap-3">
+                    <a href="tel:+918527877688" className="text-lg hover:text-primary">
+                      +91 85278 77688
+                    </a>
+                    <a
+                      href="https://wa.me/918527877688?text=Hello%20UnitedAthletes%20Foundation!"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 rounded-full bg-[#25D366]/20 px-3 py-1 text-xs font-extrabold text-[#25D366] transition-colors hover:bg-[#25D366] hover:text-white"
+                    >
+                      Chat on WhatsApp
+                    </a>
+                  </div>
                 </div>
               </li>
               <li className="flex gap-4">
