@@ -1,9 +1,9 @@
 import { createClient } from "@supabase/supabase-js";
 
 // Hardcoded fallback so Vercel works without manually setting env
-// TODO: replace with your real Supabase project values (anon key is public-safe, never put service_role/secret here)
-const HARDCODED_URL = "https://your-project.supabase.co";
-const HARDCODED_ANON_KEY = "your-anon-key";
+// Anon key is public-safe, never put service_role/secret here
+const HARDCODED_URL = "https://wkjdqjnqsbzrnfbpezgg.supabase.co";
+const HARDCODED_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndramRxam5xc2J6cm5mYnBlemdnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODgxNjE5NjYsImV4cCI6MjEwMzczNzk2Nn0.QBchXkiKZV6OZD5YweXDmXN3WTFA-QLdb6IBomJ5fII";
 
 const envUrl = import.meta.env.VITE_SUPABASE_URL as string | undefined;
 const envAnon = import.meta.env.VITE_SUPABASE_ANON_KEY as string | undefined;
