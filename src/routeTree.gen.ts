@@ -8,114 +8,310 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
-import { Route as rootRouteImport } from './routes/__root'
-import { Route as IndexRouteImport } from './routes/index'
-import { Route as AboutRouteImport } from './routes/about'
-import { Route as ContactRouteImport } from './routes/contact'
-import { Route as GetInvolvedRouteImport } from './routes/get-involved'
-import { Route as ProgrammesRouteImport } from './routes/programmes'
+import { Route as rootRouteImport } from "./routes/__root";
+import { Route as IndexRouteImport } from "./routes/index";
+import { Route as AboutRouteImport } from "./routes/about";
+import { Route as ContactRouteImport } from "./routes/contact";
+import { Route as GetInvolvedRouteImport } from "./routes/get-involved";
+import { Route as ProgrammesRouteImport } from "./routes/programmes";
+import { Route as AdminIndexRouteImport } from "./routes/admin/index";
+import { Route as AdminBlogsRouteImport } from "./routes/admin/blogs";
+import { Route as AdminDashboardRouteImport } from "./routes/admin/dashboard";
+import { Route as AdminLoginRouteImport } from "./routes/admin/login";
+import { Route as AdminMediaRouteImport } from "./routes/admin/media";
+import { Route as AdminNavigationRouteImport } from "./routes/admin/navigation";
+import { Route as AdminPagesRouteImport } from "./routes/admin/pages";
+import { Route as AdminSeoRouteImport } from "./routes/admin/seo";
+import { Route as AdminSettingsRouteImport } from "./routes/admin/settings";
 
 const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+  id: "/",
+  path: "/",
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 const AboutRoute = AboutRouteImport.update({
-  id: '/about',
-  path: '/about',
+  id: "/about",
+  path: "/about",
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 const ContactRoute = ContactRouteImport.update({
-  id: '/contact',
-  path: '/contact',
+  id: "/contact",
+  path: "/contact",
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 const GetInvolvedRoute = GetInvolvedRouteImport.update({
-  id: '/get-involved',
-  path: '/get-involved',
+  id: "/get-involved",
+  path: "/get-involved",
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 const ProgrammesRoute = ProgrammesRouteImport.update({
-  id: '/programmes',
-  path: '/programmes',
+  id: "/programmes",
+  path: "/programmes",
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
+const AdminIndexRoute = AdminIndexRouteImport.update({
+  id: "/admin/",
+  path: "/admin/",
+  getParentRoute: () => rootRouteImport,
+} as any);
+const AdminBlogsRoute = AdminBlogsRouteImport.update({
+  id: "/admin/blogs",
+  path: "/admin/blogs",
+  getParentRoute: () => rootRouteImport,
+} as any);
+const AdminDashboardRoute = AdminDashboardRouteImport.update({
+  id: "/admin/dashboard",
+  path: "/admin/dashboard",
+  getParentRoute: () => rootRouteImport,
+} as any);
+const AdminLoginRoute = AdminLoginRouteImport.update({
+  id: "/admin/login",
+  path: "/admin/login",
+  getParentRoute: () => rootRouteImport,
+} as any);
+const AdminMediaRoute = AdminMediaRouteImport.update({
+  id: "/admin/media",
+  path: "/admin/media",
+  getParentRoute: () => rootRouteImport,
+} as any);
+const AdminNavigationRoute = AdminNavigationRouteImport.update({
+  id: "/admin/navigation",
+  path: "/admin/navigation",
+  getParentRoute: () => rootRouteImport,
+} as any);
+const AdminPagesRoute = AdminPagesRouteImport.update({
+  id: "/admin/pages",
+  path: "/admin/pages",
+  getParentRoute: () => rootRouteImport,
+} as any);
+const AdminSeoRoute = AdminSeoRouteImport.update({
+  id: "/admin/seo",
+  path: "/admin/seo",
+  getParentRoute: () => rootRouteImport,
+} as any);
+const AdminSettingsRoute = AdminSettingsRouteImport.update({
+  id: "/admin/settings",
+  path: "/admin/settings",
+  getParentRoute: () => rootRouteImport,
+} as any);
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
-  '/about': typeof AboutRoute
-  '/contact': typeof ContactRoute
-  '/get-involved': typeof GetInvolvedRoute
-  '/programmes': typeof ProgrammesRoute
+  "/": typeof IndexRoute;
+  "/about": typeof AboutRoute;
+  "/contact": typeof ContactRoute;
+  "/get-involved": typeof GetInvolvedRoute;
+  "/programmes": typeof ProgrammesRoute;
+  "/admin/blogs": typeof AdminBlogsRoute;
+  "/admin/dashboard": typeof AdminDashboardRoute;
+  "/admin/login": typeof AdminLoginRoute;
+  "/admin/media": typeof AdminMediaRoute;
+  "/admin/navigation": typeof AdminNavigationRoute;
+  "/admin/pages": typeof AdminPagesRoute;
+  "/admin/seo": typeof AdminSeoRoute;
+  "/admin/settings": typeof AdminSettingsRoute;
+  "/admin/": typeof AdminIndexRoute;
 }
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute
-  '/about': typeof AboutRoute
-  '/contact': typeof ContactRoute
-  '/get-involved': typeof GetInvolvedRoute
-  '/programmes': typeof ProgrammesRoute
+  "/": typeof IndexRoute;
+  "/about": typeof AboutRoute;
+  "/contact": typeof ContactRoute;
+  "/get-involved": typeof GetInvolvedRoute;
+  "/programmes": typeof ProgrammesRoute;
+  "/admin/blogs": typeof AdminBlogsRoute;
+  "/admin/dashboard": typeof AdminDashboardRoute;
+  "/admin/login": typeof AdminLoginRoute;
+  "/admin/media": typeof AdminMediaRoute;
+  "/admin/navigation": typeof AdminNavigationRoute;
+  "/admin/pages": typeof AdminPagesRoute;
+  "/admin/seo": typeof AdminSeoRoute;
+  "/admin/settings": typeof AdminSettingsRoute;
+  "/admin": typeof AdminIndexRoute;
 }
 export interface FileRoutesById {
-  __root__: typeof rootRouteImport
-  '/': typeof IndexRoute
-  '/about': typeof AboutRoute
-  '/contact': typeof ContactRoute
-  '/get-involved': typeof GetInvolvedRoute
-  '/programmes': typeof ProgrammesRoute
+  __root__: typeof rootRouteImport;
+  "/": typeof IndexRoute;
+  "/about": typeof AboutRoute;
+  "/contact": typeof ContactRoute;
+  "/get-involved": typeof GetInvolvedRoute;
+  "/programmes": typeof ProgrammesRoute;
+  "/admin/blogs": typeof AdminBlogsRoute;
+  "/admin/dashboard": typeof AdminDashboardRoute;
+  "/admin/login": typeof AdminLoginRoute;
+  "/admin/media": typeof AdminMediaRoute;
+  "/admin/navigation": typeof AdminNavigationRoute;
+  "/admin/pages": typeof AdminPagesRoute;
+  "/admin/seo": typeof AdminSeoRoute;
+  "/admin/settings": typeof AdminSettingsRoute;
+  "/admin/": typeof AdminIndexRoute;
 }
 export interface FileRouteTypes {
-  fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/contact' | '/get-involved' | '/programmes'
-  fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/contact' | '/get-involved' | '/programmes'
-  id: '__root__' | '/' | '/about' | '/contact' | '/get-involved' | '/programmes'
-  fileRoutesById: FileRoutesById
+  fileRoutesByFullPath: FileRoutesByFullPath;
+  fullPaths:
+    | "/"
+    | "/about"
+    | "/contact"
+    | "/get-involved"
+    | "/programmes"
+    | "/admin/blogs"
+    | "/admin/dashboard"
+    | "/admin/login"
+    | "/admin/media"
+    | "/admin/navigation"
+    | "/admin/pages"
+    | "/admin/seo"
+    | "/admin/settings"
+    | "/admin/";
+  fileRoutesByTo: FileRoutesByTo;
+  to:
+    | "/"
+    | "/about"
+    | "/contact"
+    | "/get-involved"
+    | "/programmes"
+    | "/admin/blogs"
+    | "/admin/dashboard"
+    | "/admin/login"
+    | "/admin/media"
+    | "/admin/navigation"
+    | "/admin/pages"
+    | "/admin/seo"
+    | "/admin/settings"
+    | "/admin";
+  id:
+    | "__root__"
+    | "/"
+    | "/about"
+    | "/contact"
+    | "/get-involved"
+    | "/programmes"
+    | "/admin/blogs"
+    | "/admin/dashboard"
+    | "/admin/login"
+    | "/admin/media"
+    | "/admin/navigation"
+    | "/admin/pages"
+    | "/admin/seo"
+    | "/admin/settings"
+    | "/admin/";
+  fileRoutesById: FileRoutesById;
 }
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
-  AboutRoute: typeof AboutRoute
-  ContactRoute: typeof ContactRoute
-  GetInvolvedRoute: typeof GetInvolvedRoute
-  ProgrammesRoute: typeof ProgrammesRoute
+  IndexRoute: typeof IndexRoute;
+  AboutRoute: typeof AboutRoute;
+  ContactRoute: typeof ContactRoute;
+  GetInvolvedRoute: typeof GetInvolvedRoute;
+  ProgrammesRoute: typeof ProgrammesRoute;
+  AdminBlogsRoute: typeof AdminBlogsRoute;
+  AdminDashboardRoute: typeof AdminDashboardRoute;
+  AdminLoginRoute: typeof AdminLoginRoute;
+  AdminMediaRoute: typeof AdminMediaRoute;
+  AdminNavigationRoute: typeof AdminNavigationRoute;
+  AdminPagesRoute: typeof AdminPagesRoute;
+  AdminSeoRoute: typeof AdminSeoRoute;
+  AdminSettingsRoute: typeof AdminSettingsRoute;
+  AdminIndexRoute: typeof AdminIndexRoute;
 }
 
-declare module '@tanstack/react-router' {
+declare module "@tanstack/react-router" {
   interface FileRoutesByPath {
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/about': {
-      id: '/about'
-      path: '/about'
-      fullPath: '/about'
-      preLoaderRoute: typeof AboutRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/contact': {
-      id: '/contact'
-      path: '/contact'
-      fullPath: '/contact'
-      preLoaderRoute: typeof ContactRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/get-involved': {
-      id: '/get-involved'
-      path: '/get-involved'
-      fullPath: '/get-involved'
-      preLoaderRoute: typeof GetInvolvedRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/programmes': {
-      id: '/programmes'
-      path: '/programmes'
-      fullPath: '/programmes'
-      preLoaderRoute: typeof ProgrammesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
+    "/": {
+      id: "/";
+      path: "/";
+      fullPath: "/";
+      preLoaderRoute: typeof IndexRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/about": {
+      id: "/about";
+      path: "/about";
+      fullPath: "/about";
+      preLoaderRoute: typeof AboutRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/contact": {
+      id: "/contact";
+      path: "/contact";
+      fullPath: "/contact";
+      preLoaderRoute: typeof ContactRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/get-involved": {
+      id: "/get-involved";
+      path: "/get-involved";
+      fullPath: "/get-involved";
+      preLoaderRoute: typeof GetInvolvedRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/programmes": {
+      id: "/programmes";
+      path: "/programmes";
+      fullPath: "/programmes";
+      preLoaderRoute: typeof ProgrammesRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/admin/": {
+      id: "/admin/";
+      path: "/admin";
+      fullPath: "/admin/";
+      preLoaderRoute: typeof AdminIndexRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/admin/blogs": {
+      id: "/admin/blogs";
+      path: "/admin/blogs";
+      fullPath: "/admin/blogs";
+      preLoaderRoute: typeof AdminBlogsRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/admin/dashboard": {
+      id: "/admin/dashboard";
+      path: "/admin/dashboard";
+      fullPath: "/admin/dashboard";
+      preLoaderRoute: typeof AdminDashboardRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/admin/login": {
+      id: "/admin/login";
+      path: "/admin/login";
+      fullPath: "/admin/login";
+      preLoaderRoute: typeof AdminLoginRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/admin/media": {
+      id: "/admin/media";
+      path: "/admin/media";
+      fullPath: "/admin/media";
+      preLoaderRoute: typeof AdminMediaRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/admin/navigation": {
+      id: "/admin/navigation";
+      path: "/admin/navigation";
+      fullPath: "/admin/navigation";
+      preLoaderRoute: typeof AdminNavigationRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/admin/pages": {
+      id: "/admin/pages";
+      path: "/admin/pages";
+      fullPath: "/admin/pages";
+      preLoaderRoute: typeof AdminPagesRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/admin/seo": {
+      id: "/admin/seo";
+      path: "/admin/seo";
+      fullPath: "/admin/seo";
+      preLoaderRoute: typeof AdminSeoRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/admin/settings": {
+      id: "/admin/settings";
+      path: "/admin/settings";
+      fullPath: "/admin/settings";
+      preLoaderRoute: typeof AdminSettingsRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
   }
 }
 
@@ -125,17 +321,26 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   GetInvolvedRoute: GetInvolvedRoute,
   ProgrammesRoute: ProgrammesRoute,
-}
+  AdminBlogsRoute: AdminBlogsRoute,
+  AdminDashboardRoute: AdminDashboardRoute,
+  AdminLoginRoute: AdminLoginRoute,
+  AdminMediaRoute: AdminMediaRoute,
+  AdminNavigationRoute: AdminNavigationRoute,
+  AdminPagesRoute: AdminPagesRoute,
+  AdminSeoRoute: AdminSeoRoute,
+  AdminSettingsRoute: AdminSettingsRoute,
+  AdminIndexRoute: AdminIndexRoute,
+};
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
-  ._addFileTypes<FileRouteTypes>()
+  ._addFileTypes<FileRouteTypes>();
 
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
+import type { getRouter } from "./router.tsx";
+import type { startInstance } from "./start.ts";
+declare module "@tanstack/react-start" {
   interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+    ssr: true;
+    router: Awaited<ReturnType<typeof getRouter>>;
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>;
   }
 }

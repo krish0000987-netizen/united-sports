@@ -26,15 +26,46 @@ export const Route = createFileRoute("/programmes")({
 });
 
 const programmes = [
-  { n: "01", title: "Athlete Development Programme", text: "Supporting athletes with resources, guidance and opportunities designed to help them progress in their sporting journey." },
-  { n: "02", title: "Sports Facility Access", text: "Helping athletes gain access to suitable sports facilities and training environments." },
-  { n: "03", title: "Sports Equipment Support", text: "Providing access to essential sports equipment and resources that athletes require for training and development." },
-  { n: "04", title: "Emerging Athlete Support", text: "Identifying and supporting promising athletes who need greater access to opportunities and resources." },
-  { n: "05", title: "Community Sports Initiatives", text: "Building stronger sporting communities by connecting athletes, coaches, organisations, supporters and sports enthusiasts." },
-  { n: "06", title: "Athlete Opportunity Platform", text: "Creating a platform where athletes can discover opportunities, connect with the sporting ecosystem and work toward their goals." },
+  {
+    n: "01",
+    title: "Athlete Development Programme",
+    text: "Supporting athletes with resources, guidance and opportunities designed to help them progress in their sporting journey.",
+  },
+  {
+    n: "02",
+    title: "Sports Facility Access",
+    text: "Helping athletes gain access to suitable sports facilities and training environments.",
+  },
+  {
+    n: "03",
+    title: "Sports Equipment Support",
+    text: "Providing access to essential sports equipment and resources that athletes require for training and development.",
+  },
+  {
+    n: "04",
+    title: "Emerging Athlete Support",
+    text: "Identifying and supporting promising athletes who need greater access to opportunities and resources.",
+  },
+  {
+    n: "05",
+    title: "Community Sports Initiatives",
+    text: "Building stronger sporting communities by connecting athletes, coaches, organisations, supporters and sports enthusiasts.",
+  },
+  {
+    n: "06",
+    title: "Athlete Opportunity Platform",
+    text: "Creating a platform where athletes can discover opportunities, connect with the sporting ecosystem and work toward their goals.",
+  },
 ];
 
-const approach = ["Discover", "Support", "Equip", "Develop", "Connect", "Empower"];
+const approach = [
+  "Discover",
+  "Support",
+  "Equip",
+  "Develop",
+  "Connect",
+  "Empower",
+];
 
 function Programmes() {
   return (
@@ -105,7 +136,8 @@ function Programmes() {
       <section className="mx-auto max-w-4xl px-5 py-28 text-center">
         <Reveal>
           <h2 className="text-4xl sm:text-5xl">
-            Ready to take the <span className="text-gold-gradient">next step?</span>
+            Ready to take the{" "}
+            <span className="text-gold-gradient">next step?</span>
           </h2>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <Link

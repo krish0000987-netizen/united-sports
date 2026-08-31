@@ -15,7 +15,10 @@ export const Route = createFileRoute("/about")({
         content:
           "UnitedAthletes for India Foundation is an athlete-focused organisation building a stronger sporting ecosystem across India.",
       },
-      { property: "og:title", content: "About UnitedAthletes for India Foundation" },
+      {
+        property: "og:title",
+        content: "About UnitedAthletes for India Foundation",
+      },
       {
         property: "og:description",
         content:
@@ -27,11 +30,26 @@ export const Route = createFileRoute("/about")({
 });
 
 const values = [
-  { title: "Athlete First", text: "Every initiative begins with the needs, aspirations and development of athletes." },
-  { title: "Opportunity", text: "We believe talent deserves access to opportunities regardless of background." },
-  { title: "Excellence", text: "We encourage athletes to continuously improve and pursue higher levels of performance." },
-  { title: "Accessibility", text: "We work toward making sports facilities, equipment and resources more accessible." },
-  { title: "Community", text: "Athletes become stronger when supported by a connected sporting community." },
+  {
+    title: "Athlete First",
+    text: "Every initiative begins with the needs, aspirations and development of athletes.",
+  },
+  {
+    title: "Opportunity",
+    text: "We believe talent deserves access to opportunities regardless of background.",
+  },
+  {
+    title: "Excellence",
+    text: "We encourage athletes to continuously improve and pursue higher levels of performance.",
+  },
+  {
+    title: "Accessibility",
+    text: "We work toward making sports facilities, equipment and resources more accessible.",
+  },
+  {
+    title: "Community",
+    text: "Athletes become stronger when supported by a connected sporting community.",
+  },
 ];
 
 const provide = [
@@ -62,16 +80,20 @@ function About() {
       <section className="mx-auto max-w-7xl px-5 py-24">
         <div className="grid gap-14 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <Reveal>
-            <h2 className="text-4xl sm:text-5xl">Talent can come from anywhere</h2>
+            <h2 className="text-4xl sm:text-5xl">
+              Talent can come from anywhere
+            </h2>
             <p className="mt-6 leading-relaxed text-muted-foreground">
-              UnitedAthletes for India Foundation is an athlete-focused organisation
-              committed to creating a stronger ecosystem for athletes across India.
+              UnitedAthletes for India Foundation is an athlete-focused
+              organisation committed to creating a stronger ecosystem for
+              athletes across India.
             </p>
             <p className="mt-4 leading-relaxed text-muted-foreground">
               We believe that talent can come from anywhere, but access to
-              opportunities, facilities, equipment and support can determine how far
-              that talent goes. UnitedAthletes works to provide athletes with the
-              resources and opportunities they need to pursue excellence in sport.
+              opportunities, facilities, equipment and support can determine how
+              far that talent goes. UnitedAthletes works to provide athletes
+              with the resources and opportunities they need to pursue
+              excellence in sport.
             </p>
           </Reveal>
           <Reveal delay={140}>
@@ -140,10 +162,12 @@ function About() {
           <Reveal>
             <p className="eyebrow">What We Provide</p>
             <div className="rule-gold mt-4" />
-            <h2 className="mt-6 text-4xl sm:text-5xl">Support that is practical</h2>
+            <h2 className="mt-6 text-4xl sm:text-5xl">
+              Support that is practical
+            </h2>
             <p className="mt-6 max-w-md leading-relaxed text-muted-foreground">
-              Real resources, delivered where they make the biggest difference to an
-              athlete&apos;s week.
+              Real resources, delivered where they make the biggest difference
+              to an athlete&apos;s week.
             </p>
           </Reveal>
           <Reveal delay={140}>
@@ -169,9 +193,9 @@ function About() {
             </span>
           </h2>
           <p className="mx-auto mt-6 max-w-2xl leading-relaxed text-muted-foreground">
-            UnitedAthletes is committed to building an ecosystem where athletes can
-            focus on their passion, develop their abilities and move closer to
-            achieving their dreams.
+            UnitedAthletes is committed to building an ecosystem where athletes
+            can focus on their passion, develop their abilities and move closer
+            to achieving their dreams.
           </p>
           <Link
             to="/get-involved"

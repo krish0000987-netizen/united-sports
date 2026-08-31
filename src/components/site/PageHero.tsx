@@ -29,7 +29,9 @@ export function PageHero({
         <Reveal>
           <p className="eyebrow">{eyebrow}</p>
           <div className="rule-gold mt-4" />
-          <h1 className="mt-6 max-w-4xl text-5xl sm:text-6xl lg:text-7xl">{title}</h1>
+          <h1 className="mt-6 max-w-4xl text-5xl sm:text-6xl lg:text-7xl">
+            {title}
+          </h1>
           {subtitle && (
             <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
               {subtitle}

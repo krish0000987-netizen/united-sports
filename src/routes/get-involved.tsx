@@ -1,5 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Building2, Dumbbell, HeartHandshake, Landmark, Users } from "lucide-react";
+import {
+  ArrowRight,
+  Building2,
+  Dumbbell,
+  HeartHandshake,
+  Landmark,
+  Users,
+} from "lucide-react";
 
 import community from "@/assets/community.jpg";
 import equipment from "@/assets/equipment.jpg";
@@ -27,11 +34,31 @@ export const Route = createFileRoute("/get-involved")({
 });
 
 const ways = [
-  { icon: HeartHandshake, title: "Support Athlete Development", text: "Help athletes access the resources, opportunities and support they need to continue their sporting journey." },
-  { icon: Dumbbell, title: "Provide Sports Equipment", text: "Contribute sports equipment and resources that can directly support athletes and sporting initiatives." },
-  { icon: Landmark, title: "Support Sports Facilities", text: "Help create better access to quality sports facilities and training environments." },
-  { icon: Building2, title: "Partner With Us", text: "Organisations and businesses can collaborate with UnitedAthletes to support athlete-focused initiatives and sports development programmes." },
-  { icon: Users, title: "Support an Athlete", text: "Help talented athletes overcome resource limitations and continue working toward their sporting goals." },
+  {
+    icon: HeartHandshake,
+    title: "Support Athlete Development",
+    text: "Help athletes access the resources, opportunities and support they need to continue their sporting journey.",
+  },
+  {
+    icon: Dumbbell,
+    title: "Provide Sports Equipment",
+    text: "Contribute sports equipment and resources that can directly support athletes and sporting initiatives.",
+  },
+  {
+    icon: Landmark,
+    title: "Support Sports Facilities",
+    text: "Help create better access to quality sports facilities and training environments.",
+  },
+  {
+    icon: Building2,
+    title: "Partner With Us",
+    text: "Organisations and businesses can collaborate with UnitedAthletes to support athlete-focused initiatives and sports development programmes.",
+  },
+  {
+    icon: Users,
+    title: "Support an Athlete",
+    text: "Help talented athletes overcome resource limitations and continue working toward their sporting goals.",
+  },
 ];
 
 function GetInvolved() {
@@ -96,7 +123,9 @@ function GetInvolved() {
           <Reveal>
             <h2 className="max-w-3xl text-4xl sm:text-5xl">
               Every contribution becomes{" "}
-              <span className="text-gold-gradient">training time, gear, and a chance to compete.</span>
+              <span className="text-gold-gradient">
+                training time, gear, and a chance to compete.
+              </span>
             </h2>
             <Link
               to="/contact"

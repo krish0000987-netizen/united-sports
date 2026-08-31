@@ -68,7 +68,10 @@ function Contact() {
                     Phone & WhatsApp
                   </p>
                   <div className="flex flex-wrap items-center gap-3">
-                    <a href="tel:+918527877688" className="text-lg hover:text-primary">
+                    <a
+                      href="tel:+918527877688"
+                      className="text-lg hover:text-primary"
+                    >
                       +91 85278 77688
                     </a>
                     <a
@@ -98,7 +101,10 @@ function Contact() {
           </Reveal>
 
           <Reveal delay={140}>
-            <form onSubmit={onSubmit} className="surface-card rounded-sm p-8 sm:p-10">
+            <form
+              onSubmit={onSubmit}
+              className="surface-card rounded-sm p-8 sm:p-10"
+            >
               <div className="space-y-6">
                 <div>
                   <label
@@ -127,7 +133,9 @@ function Contact() {
                     type="email"
                     required
                     value={form.email}
-                    onChange={(e) => setForm({ ...form, email: e.target.value })}
+                    onChange={(e) =>
+                      setForm({ ...form, email: e.target.value })
+                    }
                     className="mt-3 w-full rounded-sm border border-input bg-background/60 px-4 py-3 outline-none transition-colors focus:border-primary"
                   />
                 </div>
@@ -143,7 +151,9 @@ function Contact() {
                     required
                     rows={5}
                     value={form.message}
-                    onChange={(e) => setForm({ ...form, message: e.target.value })}
+                    onChange={(e) =>
+                      setForm({ ...form, message: e.target.value })
+                    }
                     className="mt-3 w-full resize-none rounded-sm border border-input bg-background/60 px-4 py-3 outline-none transition-colors focus:border-primary"
                   />
                 </div>
@@ -165,7 +175,9 @@ function Contact() {
           <Reveal>
             <h2 className="text-4xl sm:text-5xl">
               Together, we can build a{" "}
-              <span className="text-gold-gradient">stronger sporting India.</span>
+              <span className="text-gold-gradient">
+                stronger sporting India.
+              </span>
             </h2>
             <p className="mt-8 font-display text-2xl">UnitedAthletes</p>
             <p className="mt-2 text-sm uppercase tracking-[0.28em] text-primary">
