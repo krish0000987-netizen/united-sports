@@ -1,24 +1,30 @@
 import { createClient } from "@supabase/supabase-js";
 
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL as string | undefined;
-const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY as
-  string | undefined;
+// Hardcoded fallback so Vercel works without manually setting env
+// TODO: replace with your real Supabase project values (anon key is public-safe, never put service_role/secret here)
+const HARDCODED_URL = "https://your-project.supabase.co";
+const HARDCODED_ANON_KEY = "your-anon-key";
 
-const isConfigured = Boolean(supabaseUrl && supabaseAnonKey);
+const envUrl = import.meta.env.VITE_SUPABASE_URL as string | undefined;
+const envAnon = import.meta.env.VITE_SUPABASE_ANON_KEY as string | undefined;
 
-if (!isConfigured) {
-  console.warn(
-    "[supabase] VITE_SUPABASE_URL / VITE_SUPABASE_ANON_KEY not set. CMS will use fallback content. Set them in .env",
-  );
+const supabaseUrl = envUrl && envUrl !== "" && envUrl !== HARDCODED_URL ? envUrl : HARDCODED_URL;
+const supabaseAnonKey = envAnon && envAnon !== "" && envAnon !== HARDCODED_ANON_KEY ? envAnon : HARDCODED_ANON_KEY;
+
+const isConfigured = Boolean(
+  supabaseUrl && supabaseAnonKey && supabaseUrl !== HARDCODED_URL && supabaseAnonKey !== HARDCODED_ANON_KEY,
+);
+
+// Also allow hardcoded if user replaces placeholders - treat as configured when placeholders replaced
+const isHardcodedConfigured = HARDCODED_URL !== "https://your-project.supabase.co" && HARDCODED_ANON_KEY !== "your-anon-key";
+const effectiveConfigured = isConfigured || isHardcodedConfigured;
+
+if (!effectiveConfigured) {
+  console.warn("[supabase] Hardcoded placeholders not replaced and no env set. Set real URL/anon key in src/lib/supabase.ts or Vercel env.");
 }
 
-export const supabase = isConfigured
-  ? createClient(supabaseUrl!, supabaseAnonKey!, {
-      auth: {
-        persistSession: true,
-        autoRefreshToken: true,
-      },
-    })
-  : (null as unknown as ReturnType<typeof createClient>);
+export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
+  auth: { persistSession: true, autoRefreshToken: true },
+});
 
-export const isSupabaseConfigured = isConfigured;
+export const isSupabaseConfigured = effectiveConfigured;
