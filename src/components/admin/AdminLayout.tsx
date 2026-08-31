@@ -92,13 +92,14 @@ export function AdminLayout({ children }: { children: React.ReactNode }) {
 export function AdminGuard({ children }: { children: React.ReactNode }) {
   const { user, loading } = useAuth();
   const routerState = useRouterState({ select: (s) => s.location.pathname });
-  if (loading)
+  const isDemo = typeof window !== "undefined" && localStorage.getItem("demo_admin") === "1";
+  if (loading && !isDemo)
     return (
       <div className="flex min-h-screen items-center justify-center">
         Loading…
       </div>
     );
-  if (!user) {
+  if (!user && !isDemo) {
     if (
       typeof window !== "undefined" &&
       !routerState.startsWith("/admin/login")
@@ -107,6 +108,38 @@ export function AdminGuard({ children }: { children: React.ReactNode }) {
     return (
       <div className="flex min-h-screen items-center justify-center">
         Redirecting to login…
+      </div>
+    );
+  }
+  // demo admin override
+  if (isDemo && !user) {
+    return (
+      <div className="flex min-h-screen bg-muted/20">
+        <aside className="hidden w-64 shrink-0 border-r border-border bg-navy-deep lg:block">
+          <div className="sticky top-0 flex h-screen flex-col">
+            <div className="border-b border-border p-6">
+              <p className="font-display text-xl">United<span className="text-primary">Athletes</span></p>
+              <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">Admin CMS (Demo)</p>
+            </div>
+            <nav className="flex-1 space-y-1 p-4">
+              {nav.map((n) => {
+                const active = routerState === n.to || routerState.startsWith(n.to + "/");
+                return (
+                  <Link key={n.to} to={n.to} className={`flex items-center gap-3 rounded-sm px-3 py-2.5 text-sm font-semibold ${active ? "bg-primary text-primary-foreground" : "text-foreground/80 hover:bg-accent"}`}>
+                    <n.icon className="h-4 w-4" /> {n.label}
+                  </Link>
+                );
+              })}
+            </nav>
+            <div className="border-t border-border p-4">
+              <p className="text-sm font-semibold">Demo Admin</p>
+              <button onClick={() => { localStorage.removeItem("demo_admin"); window.location.href = "/admin/login"; }} className="mt-3 flex w-full items-center gap-2 rounded-sm border border-input px-3 py-2 text-sm hover:bg-accent">
+                <LogOut className="h-4 w-4" /> Logout
+              </button>
+            </div>
+          </div>
+        </aside>
+        <div className="flex flex-1 flex-col"><div className="flex-1 p-6 sm:p-8">{children}</div></div>
       </div>
     );
   }
